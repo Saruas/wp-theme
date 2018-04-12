@@ -1,0 +1,55 @@
+
+/*
+
+@package TestTheme
+
+*/
+
+.test-general-form,
+.test-sidebar-preview { 
+	display: inline-block;
+	float: left;
+}
+
+.test-sidebar-preview { 
+	width: 280px;
+	background-color: #1f1f1f;
+	padding: 20px;
+	text-align: center;
+	margin-right: 20px;
+}
+.test-sidebar {
+	display: block;
+	text-align: center;
+}
+h1.test-username,
+h2.test-discription{
+	font-weight: 100; 
+	color: #fff;
+}
+h1.test-username{
+	font-size: 24px;
+	margin: 0 0 10px;
+}
+h2.test-discription{
+	font-size: 13px;
+	margin: 0 0 20px;
+}
+
+.image-container{
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+}
+.profile-picture{
+	width: 122px;
+	height: 122px;
+	overflow: hidden;
+	margin: 20px auto;
+	border-radius: 10%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
