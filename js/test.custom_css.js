@@ -7,5 +7,5 @@ jQuery(document).ready(function($){
 });
 
 var editor = ace.edit("customCss");
-//editor.setTheme("/ace/theme/monokai");
+//editor.setTheme('/ace/theme/monokai'); // fick ladda med ett annat bibleotek, inte fullständigt med mappar som vanliga 
 editor.getSession().setMode("ace/mode/css");

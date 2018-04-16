@@ -29,9 +29,9 @@ function test_custom_settings() {
 	register_setting( 'test-settings-group', 'first_name' );
 	register_setting( 'test-settings-group', 'last_name' );
 	register_setting( 'test-settings-group', 'user_description' );
-	register_setting( 'test-settings-group', 'linkedIn_handler', 'test_sanitize_linkedin_handler' );	
-	register_setting( 'test-settings-group', 'facebook_handler' );
-	register_setting( 'test-settings-group', 'instagram_handler' );
+	register_setting( 'test-settings-group', 'linkedIn_handler' );	
+	register_setting( 'test-settings-group', 'facebook_handler', 'test_sanitize_instagram_handler' );
+	register_setting( 'test-settings-group', 'instagram_handler', 'test_sanitize_instagram_handler' );
 	
 	add_settings_section( 'test-sidebar-options', 'Sidebar Options', 'test_sidebar_options', 'sundstedts_test' );
 	
@@ -120,19 +120,19 @@ function test_sidebar_description(){
 }
 function test_sidebar_linkedin(){
 	$linkedIn = esc_attr( get_option('linkedIn_handler' ) );
-	echo '<input type="text" name="linkedIn_handler" value="'.$linkedIn.'" placeholder="LinkedIn handler"/> <p class="description"> Input your LinkedIn username without the @ character.</p> ';
+	echo '<input type="text" name="linkedIn_handler" value="'.$linkedIn.'" placeholder="LinkedIn Name"/> <p class="description"> Input your LinkedIn username width the following numbers.<br> ex firstname-surname-123456789</p>';
 }
 function test_sidebar_facebook(){
 	$facebook = esc_attr( get_option('facebook_handler' ) );
-	echo '<input type="text" name="facebook_handler" value="'.$facebook.'" placeholder="Facebook handler"/> ';
+	echo '<input type="text" name="facebook_handler" value="'.$facebook.'" placeholder="Facebook Name"/><p class="description"> Input your Facebook username without the @ character.</p>  ';
 }
 function test_sidebar_instagram(){
 	$instagram = esc_attr( get_option('instagram_handler' ) );
-	echo '<input type="text" name="instagram_handler" value="'.$instagram.'" placeholder="Instagram handler"/> ';
+	echo '<input type="text" name="instagram_handler" value="'.$instagram.'" placeholder="Instagram Name"/> <p class="description"> Input your Instagram username without the @ character.</p> ';
 }
 
 //Sanitization settings
-function test_sanitize_linkedin_handler( $input ){
+function test_sanitize_instagram_handler( $input ){
 	$output = sanitize_text_field( $input );
 	$output = str_replace( '@', '', $output );
 	return $output;

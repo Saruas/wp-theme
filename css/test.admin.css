@@ -8,7 +8,7 @@
 .test-general-form,
 .test-sidebar-preview { 
 	display: inline-block;
-	float: left;
+	float: right;
 }
 
 .test-sidebar-preview { 
@@ -35,7 +35,23 @@ h2.test-discription{
 	font-size: 13px;
 	margin: 0 0 20px;
 }
-
+ul.socialMedia{
+	list-style-type: none;
+	display: inline-flex;
+}
+li.socialMedia{
+	margin-right: 5px;
+}
+.socialMedia a{
+	color: #717171;
+	text-decoration: none;
+}
+.socialMedia a:hover{
+	color: #d2d2d2;
+}
+.instagram a:before{
+	font-style: 
+}
 .image-container{
 	display: block;
 	width: 100%;

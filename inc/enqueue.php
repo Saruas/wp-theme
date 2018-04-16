@@ -31,20 +31,42 @@ add_action( 'admin_enqueue_scripts', 'test_load_admin_scripts');
 
 
 
+
+
 /*
 	***************************
-		ADMIN ENQUEUE FUNCTIONS
+		PAGE ENQUEUE FUNCTIONS
 	***************************	
 */
 
+
+
+
+
 function test_load_scripts(){
 
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.7', 'all' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css', array(), '4.1.0' );
+	wp_enqueue_style( 'test_css', get_template_directory_uri() . '/css/test.css', array(), '1.0.0' );
 
-	wp_deregister_script( 'jquery' );
+	
 	wp_register_script( 'jquery', get_template_directory_uri() . '/js/jquery-3.3.1.min.js', false, '3.3.1', true );
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.0.3', true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.1.0', true );
 
 }
-add_action( 'wp_enqueue_script', 'test_load_scripts' );
+add_action( 'wp_enqueue_scripts', 'test_load_scripts' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
