@@ -28,10 +28,36 @@
 
 							</div> <!-- .header-content -->
 							<div class="nav-container">
-
+								<nav class="firstnav navbar-defult navbar-first">
+									<?php
+									wp_nav_menu( array(
+										'theme_location' =>'First_menu',
+										'container' => false,
+										'menu_class' => 'nav navbar-first'
+									 ) );
+									?>
+								</nav>
 							</div> <!-- .nav-container  -->
+							
 						</div> <!-- .header-container -->
 				</div> <!-- .col-xs-12 -->
 			</div> <!--  .row -->
 
 	</div>	<!-- .container-fluid -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

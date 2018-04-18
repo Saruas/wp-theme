@@ -24,3 +24,11 @@ $background = get_option( 'custom_background' );
 if( @$background == 1){
 	add_theme_support('custom-background');
 }
+
+/* Activate Nav Menu Options */
+
+function test_regrister_nav_menu() {
+	register_nav_menu( 'First_menu', 'First Navigation Menu');
+	register_nav_menu( 'Second_menu', 'Second Navigation Menu');
+}
+add_action( 'after_setup_theme', 'test_regrister_nav_menu' );

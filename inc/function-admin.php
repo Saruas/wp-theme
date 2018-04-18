@@ -28,6 +28,7 @@ function test_custom_settings() {
 	register_setting( 'test-settings-group', 'profile_picture' );
 	register_setting( 'test-settings-group', 'first_name' );
 	register_setting( 'test-settings-group', 'last_name' );
+	register_setting( 'test-settings-group', 'user_title' );
 	register_setting( 'test-settings-group', 'user_description' );
 	register_setting( 'test-settings-group', 'linkedIn_handler' );	
 	register_setting( 'test-settings-group', 'facebook_handler', 'test_sanitize_instagram_handler' );
@@ -38,6 +39,7 @@ function test_custom_settings() {
 //Field For the sidebar
 	add_settings_field('sidebar-profile-picture', 'Profile Picture', 'test_sidebar_profile', 'sundstedts_test', 'test-sidebar-options' );
 	add_settings_field('sidebar-name', 'Full Name', 'test_sidebar_name', 'sundstedts_test', 'test-sidebar-options' );
+	add_settings_field('sidebar-user-title', 'User Title', 'test_sidebar_user_title', 'sundstedts_test', 'test-sidebar-options' );
 	add_settings_field('sidebar-description', 'User Description', 'test_sidebar_description', 'sundstedts_test', 'test-sidebar-options' );
 	add_settings_field('sidebar-linkedin', 'LinkedIn handler', 'test_sidebar_linkedin', 'sundstedts_test', 'test-sidebar-options' );
 	add_settings_field('sidebar-facebook', 'Facebook handler', 'test_sidebar_facebook', 'sundstedts_test', 'test-sidebar-options' );
@@ -114,9 +116,14 @@ function  test_sidebar_name() {
 	echo '<input type="text" name="first_name" value="'.$firstName.'" placeholder="First Name"/>
 	<input type="text" name="last_name" value="'.$lastName.'" placeholder="Last Name"/>  ';
 }
+
+function test_sidebar_user_title(){
+	$usertitle = esc_attr( get_option('user_title' ) );
+	echo '<input type="text" name="user_title" value="'.$usertitle.'" placeholder="Title"/> <p class="description"> What is your title.</p>';
+}
 function test_sidebar_description(){
 	$description = esc_attr( get_option('user_description' ) );
-	echo '<input type="text" name="user_description" value="'.$description.'" placeholder="Description"/> <p class="description"> Whrite something smart about yourself.</p>';
+	echo '<input type="text" name="user_description" value="'.$description.'" placeholder="Description" /> <p class="description"> Whrite something smart about yourself.</p>';
 }
 function test_sidebar_linkedin(){
 	$linkedIn = esc_attr( get_option('linkedIn_handler' ) );
