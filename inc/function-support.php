@@ -32,3 +32,27 @@ function test_regrister_nav_menu() {
 	register_nav_menu( 'Second_menu', 'Second Navigation Menu');
 }
 add_action( 'after_setup_theme', 'test_regrister_nav_menu' );
+
+/*
+	***************************
+		SIDEBAR SUPPORT OPTIONS
+	***************************	
+*/
+
+function test_sidebar_init() {
+
+	register_sidebar(
+		array(
+			'name' => esc_html__( 'Test Sidebar', 'testtheme'),
+			'id' => 'test-sidebar',
+			'description' => 'Dynamic Right Sidebar',
+			'before_widget' => '<section id="%1$s" class="test-widget %2$s">',
+			'after_widget' => '</section>',
+			'before_title' => '<h2 class="test-widget-title">',
+			'after_title' => '</h2>'
+			)
+		);
+}
+add_action( 'widgets_init', 'test_sidebar_init' );
+
+

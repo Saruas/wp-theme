@@ -23,9 +23,9 @@
 		<h2 class="test-discription"><?php print $description; ?></h2>
 			<div class="icon-wrapper">
 				<ul class="socialMedia">
-					<li class="socialMedia linkedIn"><a class="linkedIn" href="https://www.linkedin.com/in/<?php print $linkedIn; ?>"></a></li>
-					<li class="socialMedia facebook"><a class="facebook" href="https://www.facebook.com/<?php print $facebook; ?>"></a></li>
-					<li class="socialMedia instagram"><a href="https://www.instagram.com/<?php print $instagram; ?>"></a></li>
+					<li class="socialMedia linkedIn"><a class="linkedIn" href="https://www.linkedin.com/in/<?php print $linkedIn; ?>" target="_blank"></a></li>
+					<li class="socialMedia facebook"><a class="facebook" href="https://www.facebook.com/<?php print $facebook; ?>" target="_blank"></a></li>
+					<li class="socialMedia instagram"><a href="https://www.instagram.com/<?php print $instagram; ?>" target="_blank"></a></li>
 				</ul>
 			</div>		
 	</div>
