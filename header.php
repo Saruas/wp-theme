@@ -20,7 +20,7 @@
 
 <div class="test-sidebar">
 	<div class="test-sidebar-container">
-			<a class="js-closeSidebar sidebar-close"> 
+			<a class="js-toggleSidebar sidebar-close"> 
 			<span class="fa fa-times fa-lg"></span>
 			</a>
 			
@@ -34,6 +34,9 @@
 
 
 <div class="header-content">
+	<a class="js-toggleSidebar sidebar-open"> 
+			<span class="fa fa-bars fa-lg"></span>
+	</a>
 	<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 	<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 </div> <!-- .header-content -->

@@ -10,5 +10,5 @@ if ( ! is_active_sidebar( 'test-sidebar') ) {
 
 ?>
 <aside id="secondary" class="widget-area" role="complemenrary">
-<?php dynamic_sidebar( 'test-sidebar' ); ?>
+	<?php dynamic_sidebar( 'test-sidebar' ); ?>
 </aside>

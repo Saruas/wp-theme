@@ -25,6 +25,8 @@ if( @$background == 1){
 	add_theme_support('custom-background');
 }
 
+add_theme_support( 'post-thumbnails' );
+
 /* Activate Nav Menu Options */
 
 function test_regrister_nav_menu() {
@@ -54,5 +56,33 @@ function test_sidebar_init() {
 		);
 }
 add_action( 'widgets_init', 'test_sidebar_init' );
+
+/*
+	***************************
+		BLOG LOOP FUNCTIONS
+	***************************	
+*/
+
+function theme_posted_meta () {
+	 
+	return '<span class="posted-in">' . the_category('. ' ) . '</span>';
+}
+function theme_posted_footer () {
+	return '<div class="post-footer-container">
+	<div class="row>
+	<div class="col-xs-12">' . get_the_tag_list('<div class="tag-list"><span class="fa fa-tags"></span>' ,'', '</div>' ) . 
+	' </div> 
+	</div>';
+}
+
+
+
+
+
+
+
+
+
+
 
 
