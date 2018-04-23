@@ -17,44 +17,28 @@
 	</head>
 <body <?php body_class();?> >
 
-<?php 
-	$picture = esc_attr( get_option( 'profile_picture' ) );
-	$firstName = esc_attr( get_option( 'first_name' ) );
-	$lastName = esc_attr( get_option( 'last_name' ) );
-	$fullName = $firstName . ' '. $lastName;
-	$usertitle = esc_attr( get_option('user_title' ) );
-	$description = esc_attr( get_option('user_description' ) );
-	$linkedIn = esc_attr( get_option('linkedIn_handler' ) );
-	$facebook = esc_attr( get_option('facebook_handler' ) );
-	$instagram = esc_attr( get_option('instagram_handler' ) );
-	$socialMedia = $linkedIn . ' ' . $facebook . ' ' . $instagram; 
- ?> 
-<div class="test-sidebar-container" style="background-image: url( <?php header_image(); ?>);">
-	<div class="test-sidebar">
-		<?php get_sidebar(); ?>
 
-		<div class="image-container">
-			<div id="profile-picture-preview" class="profile-picture" style="background-image: url(<?php print $picture; ?>);"></div>
+<div class="test-sidebar">
+	<div class="test-sidebar-container">
+			<a class="js-closeSidebar sidebar-close"> 
+			<span class="fa fa-times fa-lg"></span>
+			</a>
+			
+
+		<div class="sidebar-scroll">
+
+			<?php get_sidebar(); ?>
 		</div>
-		<h1 class="test-username"><?php print $fullName; ?></h1>
-		<h2 class="test-title"><?php print $usertitle; ?></h2>
-		<h2 class="test-discription"><?php print $description; ?></h2>
-		
-			<div class="icon-wrapper">
-				<ul class="socialMedia">
-					<li class="socialMedia linkedIn"><a class="linkedIn" href="https://www.linkedin.com/in/<?php print $linkedIn; ?>" target="_blank"></a></li>
-					<li class="socialMedia facebook"><a class="facebook" href="https://www.facebook.com/<?php print $facebook; ?>" target="_blank"></a></li>
-					<li class="socialMedia instagram"><a href="https://www.instagram.com/<?php print $instagram; ?>" target="_blank"></a></li>
-				</ul>
-			</div>		
 	</div>
-</div> <!-- test-sidebar-container -->
+</div> 
+
 
 <div class="header-content">
 	<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 	<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-
 </div> <!-- .header-content -->
+
+
 		<div class="nav-container">
 			<nav class="firstnav navbar-defult navbar-first">
 				<?php

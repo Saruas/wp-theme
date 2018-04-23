@@ -1,0 +1,31 @@
+
+@mixin animate ( $attr, $time){
+    -webkit-transition: $attr $time ease;
+    -moz-transition: $attr $time ease;
+    -ms-transition: $attr $time ease;
+    -o-transition: $attr $time ease;
+    transition: $attr $time ease;
+}
+
+@mixin translateX ( $val ) {
+	-webkit-transform: translateX( $val );
+	-moz-transform: translateX( $val );
+	-ms-transform: translateX( $val );
+	-o-transform: translateX( $val );
+	transform: translateX( $val );
+}
+
+
+@mixin transform( $val ) {
+    -webkit-transform: $val;
+    -moz-transform: $val;
+    -ms-transform: $val;
+    -o-transform: $val;
+    transform: $val;
+}
+
+
+@mixin fullwidth (){
+	width: 100%;
+	height: auto;
+}

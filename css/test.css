@@ -1,100 +1,51 @@
+/*
+	VARIABLES
+	----------------------------------------------
+*/
 html {
   margin-top: 0px !important; }
 
-
-/*# sourceMappingURL=test.css.map */
-
 /*
-
-@package TestTheme
-
+	SIDEBAR 
+	*************************
 */
-
-.test-general-form,
-.test-sidebar-preview { 
-	display: inline-block;
-	float: right;
-}
+.test-sidebar {
+  position: fixed;
+  color: #fff;
+  z-index: 9;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3b3b3b;
+  height: 100vh;
+  width: 100%;
+  max-width: 280px;
+  -webkit-transition: transform 420ms ease;
+  -moz-transition: transform 420ms ease;
+  -ms-transition: transform 420ms ease;
+  -o-transition: transform 420ms ease;
+  transition: transform 420ms ease; }
+  .test-sidebar.sidebar-close {
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%); }
 
 .test-sidebar-container {
-    width: 25%;
-    height: 100%;
-    text-align: center;
-    right: 0;
-    top: 0;
-    position: fixed;
-}
-.test-sidebar {
-	display: block;
-	text-align: center;
-	padding: 40px;
-	height: 100%;
-	background-color: #1f1f1f;
-}
-h1.test-username,
-h2.test-discription,
-h2.test-title{
-	font-weight: 100; 
-	color: #fff;
-}
-h1.test-username{
-	font-size: 24px;
-	margin: 0 0 10px;
-}
-h2.test-discription{
-	font-size: 13px;
-	margin: 0 0 20px;
-}
-h2.test-title{
-	font-size: 15px;
-	margin: 0 0 20px;
-}
-ul.socialMedia{
-	list-style-type: none;
-	display: inline-flex;
-}
-li.socialMedia{
-	margin-right: 20px;
-}
-.socialMedia a{
-	color: #717171;
-	text-decoration: none;
-}
-.socialMedia a:hover{
-	color: #d2d2d2;
-}
-.instagram a:before{
-	font-family: 'FontAwesome';
-	content: '\f16d';
-	font-size: 20px;
-	position: relative;
-}
-.facebook a:before{
-	font-family: 'FontAwesome';
-	content: '\f09a';
-	font-size: 20px;
-	position: relative;
-}
-.linkedIn a:before{
-	font-family: 'FontAwesome';
-	content: '\f08c';
-	font-size: 20px;
-	position: relative;
-}
-.image-container{
-	display: block;
-	width: 100%;
-	overflow: hidden;
-	text-align: center;
-}
-.profile-picture{
-	width: 162px;
-	height: 162px;
-	overflow: hidden;
-	margin: 20px auto;
-	border-radius: 10%;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  padding-top: 40px; }
 
+.sidebar-close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  cursor: pointer; }
+  .sidebar-close:hover, .sidebar-close:focus {
+    color: #000; }
+
+/*# sourceMappingURL=test.css.map */
