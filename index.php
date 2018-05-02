@@ -2,8 +2,8 @@
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main"></main>
-
-		<div class="container">
+		<div class="page-container-sidebar">
+		<div class="page-container">
 		<?php
 
 			if( have_posts() ):
@@ -16,6 +16,7 @@
 
 			endif;
 		?>
+		</div>
 		</div>
 	</div> 
 

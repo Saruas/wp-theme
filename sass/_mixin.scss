@@ -1,5 +1,5 @@
 
-@mixin animate ( $attr, $time){
+@mixin animate( $attr, $time) {
     -webkit-transition: $attr $time ease;
     -moz-transition: $attr $time ease;
     -ms-transition: $attr $time ease;
@@ -7,7 +7,7 @@
     transition: $attr $time ease;
 }
 
-@mixin translateX ( $val ) {
+@mixin translateX( $val ) {
 	-webkit-transform: translateX( $val );
 	-moz-transform: translateX( $val );
 	-ms-transform: translateX( $val );
@@ -36,3 +36,16 @@
     box-shadow: $top $left $blur $color;
   }
 }
+
+ @mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+    -moz-transform: rotate($degrees);
+    -ms-transform: rotate($degrees);
+    -o-transform: rotate($degrees);
+    transform: rotate($degrees);
+    }
+
+@mixin fullwidth() {
+    width: 100%;
+    height: auto;
+}    

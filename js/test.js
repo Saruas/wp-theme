@@ -13,6 +13,11 @@ $(document).on('click', '.js-openSidebar', function() {
 }); //close sidebar
 */
 $(document).on('click', '.js-toggleSidebar', function() {
-	$( '.test-sidebar' ).toggleClass( 'sidebar-closed');
+	$( '.test-sidebar' ).toggleClass( 'sidebar-closed' );
+	$( '.page-container-width' ).fadeToggle( 320 );
 }); //
+
+/* First page functions */
+
+
 });

@@ -68,15 +68,34 @@ function theme_posted_meta () {
 	return '<span class="posted-in">' . the_category('. ' ) . '</span>';
 }
 function theme_posted_footer () {
-	return '<div class="post-footer-container">
-	<div class="row>
-	<div class="col-xs-12">' . get_the_tag_list('<div class="tag-list"><span class="fa fa-tags"></span>' ,'', '</div>' ) . 
-	' </div> 
-	</div>';
+	return '<div class="post-footer-container">' . get_the_tag_list('<div class="tag-list"><span class="fa fa-tags"></span>' ,'', '</div>' ) . 
+	'</div>';
 }
 
+/*
+	***************************
+		SINGLE POST FUNCTIONS
+	***************************	
+*/
+function stripped_post_navigation(){
+
+		$prevPost = get_previous_post();
+	$prevThumbnail = get_the_post_thumbnail( $prevPost->ID );
+		previous_post_link( '%link', $prevThumbnail );
+
+	$nav = '<div class="stripped-row">';
+	$prev = get_previous_post_link( '<div class="stripped-post-link-nav" style="background-image: url(<?php echo $prevThumbnail; ?>);">%link</div>', '%title' );
+	
+	$nav .= '<div class="stripped-post-content">' . $prev . '</div>';
+
+	$next = get_next_post_link( '<div class="stripped-post-link-nav">%link</div>', '%title' );
+	$nav .= '<div class="stripped-post-content">' . $next . '</div>';
+
+	$nav .= '</div>';
 
 
+	return $nav;
+}
 
 
 

@@ -1,0 +1,47 @@
+/* 
+	SINGLE POST FORMAT
+	------------------------------------
+*/
+.content-area {
+  margin-left: 60px; }
+
+.single-page-container {
+  width: 65%;
+  margin: auto; }
+
+.navigation,
+.post-navigation {
+  width: 65%;
+  margin: auto; }
+
+.stripped-single-post p {
+  letter-spacing: 0.4px;
+  line-height: 1.5; }
+.stripped-single-post.entry-content {
+  min-height: 450px; }
+.stripped-single-post.entry-header {
+  margin-bottom: 120px; }
+.stripped-single-post.entry-meta {
+  text-align: center;
+  font-size: 20px; }
+  .stripped-single-post.entry-meta a {
+    color: #000;
+    text-decoration: none; }
+.stripped-single-post.entry-title {
+  text-align: center; }
+  .stripped-single-post.entry-title.entry-title h1 {
+    font-size: 35px;
+    margin: 0;
+    line-height: 1;
+    padding-top: 15px; }
+.stripped-single-post.entry-keywords {
+  padding-top: 50px; }
+  .stripped-single-post.entry-keywords a {
+    padding-left: 7px;
+    color: #000;
+    text-decoration: none;
+    font-size: 15px; }
+.stripped-single-post.entry-footer {
+  margin-top: 150px; }
+
+/*# sourceMappingURL=single-page.css.map */

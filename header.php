@@ -37,12 +37,13 @@
 	<a class="js-toggleSidebar sidebar-open"> 
 			<span class="fa fa-bars fa-lg"></span>
 	</a>
-	<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-	<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-</div> <!-- .header-content -->
 
+	<div class="nav-first-container">
+		<div class="brand">
+		      <a href="http://localhost:8888/">Logo</a>
+		    </div>
+	 <div class="nav-first-row"> 
 
-		<div class="nav-container">
 			<nav class="firstnav navbar-defult navbar-first">
 				<?php
 					wp_nav_menu( array(
@@ -52,8 +53,31 @@
 					 ) );
 				?>
 			</nav>
-		</div> <!-- .nav-container  -->
+		</div>	
+		</div> <!-- .nav-container  -->	
+<?php /*	
+	<div class="nav-second-container">
+		<div class="brand">
+		      <a href="#!">Logo</a>
+		    </div>
+	 <div class="nav-second-row"> 
+			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 
+
+			<nav class="secondnav navbar-defult navbar-second">
+				<?php
+					wp_nav_menu( array(
+						'theme_location' =>'First_menu',
+						'container' => false,
+						'menu_class' => 'nav navbar-first'
+					 ) );
+				?>
+			</nav>
+		</div>	
+		</div> <!-- .nav-container  -->
+*/		?>
+</div> <!-- .header-content -->
 
 
 
