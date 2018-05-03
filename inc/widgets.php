@@ -33,11 +33,11 @@ class Custom_Profile_Widget extends WP_Widget {
 	$firstName = esc_attr( get_option( 'first_name' ) );
 	$lastName = esc_attr( get_option( 'last_name' ) );
 	$fullName = $firstName . ' '. $lastName;
-	$usertitle = esc_attr( get_option('user_title' ) );
-	$description = esc_attr( get_option('user_description' ) );
-	$linkedIn = esc_attr( get_option('linkedIn_handler' ) );
-	$facebook = esc_attr( get_option('facebook_handler' ) );
-	$instagram = esc_attr( get_option('instagram_handler' ) );
+	$usertitle = esc_attr( get_option( 'user_title' ) );
+	$description = esc_attr( get_option( 'user_description' ) );
+	$linkedIn = esc_attr( get_option( 'linkedIn_handler' ) );
+	$facebook = esc_attr( get_option( 'facebook_handler' ) );
+	$instagram = esc_attr( get_option( 'instagram_handler' ) );
 	$socialMedia = $linkedIn . ' ' . $facebook . ' ' . $instagram;
 
 	echo $args['before_widget'];

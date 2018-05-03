@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;;EAGE;AAEF,gBAAgB;AAGf,oIAA+B;EAC/B,WAAW,EAAE,oBAAoB;;AAIlC,iBAAiB;AAGhB,mDAAqB;EACpB,QAAQ,EAAE,MAAM;EAChB,UAAU,EAAE,KAAK;EACjB,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,GAAG;EACV,OAAO,EAAE,KAAK;EACd,MAAM,EAAE,EAAE;EACV,KAAK,EAAE,IAAI",
+"sources": ["../sass/admin-extras.scss"],
+"names": [],
+"file": "admin-extras.css"
+}

@@ -90,3 +90,10 @@ li.socialMedia{
 	background-size: cover;
 }
 
+/* Layout options */
+
+span.font-roboto {
+    font-family: 'roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}

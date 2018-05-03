@@ -1,0 +1,26 @@
+/*
+	ADMIN COSTUM STYLES 
+	*************************
+*/
+
+/* TYPOGRAPHY */
+
+.roboto-font{
+	& h1, h2, h3, h4, h5, h6, a, p {
+	font-family: 'roboto', sans-serif;
+	}
+}
+
+/* POST FORMAT */ 
+
+.around-article-post-fullwidth {
+	.around-article-post {
+		overflow: hidden;
+		max-height: 600px;
+		min-height: auto;
+		width: 99%;
+		display: block;
+		margin: 1%;
+		float: none;
+	}
+}

@@ -14,12 +14,12 @@
   margin-left: 60px; }
 
 .single-page-container {
-  width: 65%;
+  width: 95%;
   margin: auto; }
 
 .navigation,
 .post-navigation {
-  width: 65%;
+  width: 95%;
   margin: auto; }
 
 .stripped-single-post p {
@@ -221,15 +221,36 @@ a img.aligncenter {
   /* Above WP toolbar. */ }
 
 /*
+	ADMIN COSTUM STYLES 
+	*************************
+*/
+/* TYPOGRAPHY */
+.roboto-font h1, .roboto-font h2, .roboto-font h3, .roboto-font h4, .roboto-font h5, .roboto-font h6, .roboto-font a, .roboto-font p {
+  font-family: 'roboto', sans-serif; }
+
+/* POST FORMAT */
+.around-article-post-fullwidth .around-article-post {
+  overflow: hidden;
+  max-height: 600px;
+  min-height: auto;
+  width: 99%;
+  display: block;
+  margin: 1%;
+  float: none; }
+
+/*
 	GENERAL 
 	*************************
 */
 html {
   margin-top: 0px !important; }
 
-h1, h2, h3, h4, h5, h6, a, p {
+body h1, body h2, body h3, body h4, body h5, body h6, body a, body p {
   font-family: 'lato', sans-serif; }
 
+/*h1, h2, h3, h4, h5, h6, a, p {
+	font-family: 'lato', sans-serif;
+}*/
 ul {
   list-style: none; }
 
@@ -564,9 +585,7 @@ li.socialMedia {
 */
 .page-container {
   margin-top: -38px !important;
-  width: 80%;
-  margin-left: auto;
-  padding-left: 35px; }
+  margin-left: auto; }
   .page-container.page-container-width {
     width: 95%; }
 

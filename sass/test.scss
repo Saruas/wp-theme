@@ -7,6 +7,7 @@
 @import 'variables';
 @import 'single-page';
 @import 'wordpress-base';
+@import 'admin-extras';
 
 
 /*
@@ -17,9 +18,15 @@
 html {
 	margin-top: 0px !important;
 }
-h1, h2, h3, h4, h5, h6, a, p {
+body {
+	& h1, h2, h3, h4, h5, h6, a, p {
 	font-family: 'lato', sans-serif;
+	}
 }
+
+/*h1, h2, h3, h4, h5, h6, a, p {
+	font-family: 'lato', sans-serif;
+}*/
 
 ul {
 	list-style: none;
@@ -389,9 +396,9 @@ li.socialMedia{
 */
 .page-container {
 	margin-top: -38px !important;
-	width: 80%;
+	
 	margin-left: auto;
-	padding-left: 35px;
+	
 
 	&.page-container-width {
 		width: 95%;

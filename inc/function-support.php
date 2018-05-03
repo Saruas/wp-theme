@@ -15,17 +15,52 @@ if(!empty( $options ) ){
 	add_theme_support( 'post-formats', $output );
 
 }
-//Header & Background Aktivering 
+//Header, Logo & Background Aktivering 
 $header = get_option( 'custom_header' );
 if( @$header == 1){
-	add_theme_support('custom-header');
+
+	$custom = array(
+		'width'         => '100vw',
+		'height'        => '100wh',
+		'default-image' => '',
+
+		);
+	add_theme_support('custom-header', $custom);
 }
+
+$logo = get_option( 'custom_logo' );
+if( @$logo == 1){
+	add_theme_support('custom-logo');
+}
+
 $background = get_option( 'custom_background' );
 if( @$background == 1){
 	add_theme_support('custom-background');
 }
 
+$customfont = get_option( 'change_roboto_font' );
+if( @$customfont == 1){
+	add_filter( 'body_class', function( $classes ) {
+    return array_merge( $classes, array( 'roboto-font' ) );
+} );
+}
+/*
+	***************************
+		CUSTOM FONT FAMILY OPTIONS
+	***************************	
+*/	
+
+$custompostwidth = get_option( 'full_post_width' );
+if( @$custompostwidth == 1){
+	add_filter( 'body_class', function( $classes ) {
+    return array_merge( $classes, array( 'around-article-post-fullwidth' ) );
+} );
+}
+
+
 add_theme_support( 'post-thumbnails' );
+
+add_theme_support( 'customize-selective-refresh-widgets' );
 
 /* Activate Nav Menu Options */
 
@@ -47,7 +82,7 @@ function test_sidebar_init() {
 		array(
 			'name' => esc_html__( 'Test Sidebar', 'testtheme'),
 			'id' => 'test-sidebar',
-			'description' => 'Dynamic Right Sidebar',
+			'description' => 'Dynamic Left Sidebar',
 			'before_widget' => '<section id="%1$s" class="test-widget %2$s">',
 			'after_widget' => '</section>',
 			'before_title' => '<h2 class="test-widget-title">',
@@ -81,7 +116,7 @@ function stripped_post_navigation(){
 	$prevPost = get_previous_post(true);
 	$prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(300,150) );
 
-	previous_post_link( '<div class="nav-prev">%link', $prevthumbnail . _x('<div class="stripped-nav-prev-title"><a class="stripped-prev-a">Privious</a><span class="stripped-prev-title"> %title </span><span class="meta-nav">&rarr;</span></div></div>', 'Previous post link', 'nicosite' ) );
+	previous_post_link( '<div class="nav-prev">%link</div>', $prevthumbnail . _x('<div class="stripped-nav-prev-title"><a class="stripped-prev-a">Privious</a><span class="stripped-prev-title"> %title </span><span class="meta-nav">&rarr;</span></div>', 'Previous post link', 'nicosite' ) );
 	
 
 	$nextPost = get_next_post(true);
