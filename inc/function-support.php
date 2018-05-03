@@ -78,23 +78,18 @@ function theme_posted_footer () {
 	***************************	
 */
 function stripped_post_navigation(){
+	$prevPost = get_previous_post(true);
+	$prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(300,150) );
 
-		$prevPost = get_previous_post();
-	$prevThumbnail = get_the_post_thumbnail( $prevPost->ID );
-		previous_post_link( '%link', $prevThumbnail );
-
-	$nav = '<div class="stripped-row">';
-	$prev = get_previous_post_link( '<div class="stripped-post-link-nav" style="background-image: url(<?php echo $prevThumbnail; ?>);">%link</div>', '%title' );
+	previous_post_link( '<div class="nav-prev">%link', $prevthumbnail . _x('<div class="stripped-nav-prev-title"><a class="stripped-prev-a">Privious</a><span class="stripped-prev-title"> %title </span><span class="meta-nav">&rarr;</span></div></div>', 'Previous post link', 'nicosite' ) );
 	
-	$nav .= '<div class="stripped-post-content">' . $prev . '</div>';
 
-	$next = get_next_post_link( '<div class="stripped-post-link-nav">%link</div>', '%title' );
-	$nav .= '<div class="stripped-post-content">' . $next . '</div>';
+	$nextPost = get_next_post(true);
+	$nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(300,150) );
 
-	$nav .= '</div>';
+	next_post_link( '<div class="nav-next">%link</div>', $nextthumbnail . _x( '<div class="stripped-nav-next-title"><a class="stripped-next-a">Next</a><span class="stripped-next-title"> %title </span><span class="meta-nav">&rarr;</span></div>', 'Next post link', 'nicosite' ) );
 
-
-	return $nav;
+	
 }
 
 
