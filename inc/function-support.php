@@ -92,6 +92,12 @@ function test_sidebar_init() {
 }
 add_action( 'widgets_init', 'test_sidebar_init' );
 
+add_filter('wp_list_categories', 'cat_count_span');
+function cat_count_span($links) {
+  $links = str_replace('</a> (', '</a> <span class="stripped-span">(', $links);
+  $links = str_replace(')', ')</span>', $links);
+  return $links;
+}
 /*
 	***************************
 		BLOG LOOP FUNCTIONS
@@ -114,24 +120,29 @@ function theme_posted_footer () {
 */
 function stripped_post_navigation(){
 	$prevPost = get_previous_post(true);
-	$prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(300,150) );
 
-	previous_post_link( '<div class="nav-prev">%link</div>', $prevthumbnail . _x('<div class="stripped-nav-prev-title"><a class="stripped-prev-a">Privious</a><span class="stripped-prev-title"> %title </span><span class="meta-nav">&rarr;</span></div>', 'Previous post link', 'nicosite' ) );
+	if($prevPost){ ?>
+		<div class="stripped_post_navigation previous">
+	<?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(300,150) ); 
+	 previous_post_link( '<div class="nav-prev">%link</div>', $prevthumbnail . _x('<div class="stripped-nav-prev-title"><a class="stripped-prev-a">Privious</a><span class="meta-nav">&larr;</span><span class="stripped-prev-title"> %title </span></div>', 'Previous post link', 'nicosite' ) );
+	}
 	
+	else {
+		echo 'no Privious Posts';
+	}
+	?></div><?php
 
 	$nextPost = get_next_post(true);
-	$nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(300,150) );
 
-	next_post_link( '<div class="nav-next">%link</div>', $nextthumbnail . _x( '<div class="stripped-nav-next-title"><a class="stripped-next-a">Next</a><span class="stripped-next-title"> %title </span><span class="meta-nav">&rarr;</span></div>', 'Next post link', 'nicosite' ) );
+	if($nextPost){ ?>
+		<div class="stripped_post_navigation next">
+	<?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(300,150) ); 
+	 next_post_link( '<div class="nav-next">%link</div>', $nextthumbnail . _x('<div class="stripped-nav-next-title"><a class="stripped-next-a">Next</a><span class="stripped-prev-title"> %title </span><span class="meta-nav">&rarr;</span></div>', 'Previous post link', 'nicosite' ) );
+	}
 
+	else {
+		echo 'no more posts';
+	}
 	
 }
-
-
-
-
-
-
-
-
 

@@ -7,7 +7,7 @@
 
 
 <form method="post" action="options.php" class="stripped-layout-form">
-	<?php settings_fields( 'stripped-layout-options' );  ?>
-	<?php do_settings_sections( 'stripped_theme_layout_options' ); ?>
+	<?php settings_fields( 'stripped-theme-layout' );  ?>
+	<?php do_settings_sections( 'stripped_theme_layout' ); ?>
 	<?php submit_button(); ?> 
 </form>

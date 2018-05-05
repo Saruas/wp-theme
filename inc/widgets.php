@@ -67,3 +67,17 @@ class Custom_Profile_Widget extends WP_Widget {
 add_action( 'widgets_init', function() {
 	register_widget( 'Custom_Profile_Widget' );
 } );
+
+/*  Edit default Wordpress Widget */
+
+function test_tag_cloud_change( $args ) {
+
+	$args ['smallest'] = 8;
+	$args ['largest'] = 10;
+
+	return $args;
+ }
+
+ add_filter( 'widget_tag_cloud_args', 'test_tag_cloud_change' );
+
+

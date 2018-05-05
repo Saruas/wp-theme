@@ -22,6 +22,7 @@ body {
 	& h1, h2, h3, h4, h5, h6, a, p {
 	font-family: 'lato', sans-serif;
 	}
+	width: 100%;
 }
 
 /*h1, h2, h3, h4, h5, h6, a, p {
@@ -265,9 +266,7 @@ a.btn.tbn-default {
 	&.sidebar-closed {
 		@include transform( translateX( -100% ) );
 	}
-	&.page-container {
-	width: 78%; 
-	}
+	
 	@include box-shadow(3px, 3px, 12px, 2px #000 );
 
 	a {
@@ -277,6 +276,8 @@ a.btn.tbn-default {
 		&:focus {
 		color: #fff;
 		}
+
+
 	}
 
 }
@@ -288,6 +289,7 @@ a.btn.tbn-default {
 	height: 100vh;
 	overflow-y: scroll;
     overflow-x: hidden;
+
 }
 .sidebar-close {
 	display: none;
@@ -365,8 +367,14 @@ li.socialMedia{
 	margin-right: 20px;
 }
 .socialMedia a{
-	color: #717171;
 	text-decoration: none;
+    font-family: Futura;
+    background-color: #000;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: #000;
+    color: black;
+    text-shadow: rgba(245, 245, 245, 0.08) 1px 1px 1px;
 
 	&:hover,
 	&:focus {
@@ -376,7 +384,7 @@ li.socialMedia{
 .socialMedia a:before{
 	font-family: 'FontAwesome';
 	content: '\f16d';
-	font-size: 15px;
+	font-size: 21px;
 	position: relative;
 }
 
@@ -394,17 +402,19 @@ li.socialMedia{
 	STANDARD POST FORMAT
 	------------------------------------
 */
-.page-container {
+.page-container-sidebar {
 	margin-top: -38px !important;
-	
 	margin-left: auto;
+	width: 80%;
+	float: right;
 	
+	&.page-container{
+		width: 100%;
 
-	&.page-container-width {
-		width: 95%;
 	}
 
 }
+
 .page-sidebar-page {
 	background-color: #fff;
 }
@@ -412,10 +422,11 @@ li.socialMedia{
 .around-article-post {
 	overflow: hidden;
 	max-height: 400px;
-	min-height: 400px;
-	width: 50%;
+	min-height: auto;
+	width: 49%;
 	display: block;
 	float: left;
+	margin: 0.2%;
 
 	.entry-meta {
     	font-size: 20px;
@@ -553,7 +564,7 @@ h1 {
 */
 .test-widget {
     text-align: center;
-    box-shadow: inset 1px 1px 1px #000;
+   /* box-shadow: inset 1px 1px 1px #000; */
     padding-top: 5px;
 }
 
@@ -561,6 +572,7 @@ h1 {
 
 h2.test-widget-title {
     font-size: 18px;
+    line-height: 1.2;
     font-family: Futura;
     background-color: #000;
     -webkit-background-clip: text;
@@ -587,7 +599,26 @@ h2.test-widget-title {
 .test-widget.widget_pages li {
 	padding: 0 10px;
 }
+.test-widget ul#menu-header-menu {
+	display: inline-flex;
+    padding: 0;
 
+    a {
+    	padding: 12px;
+    }
+}
+	.test-widget li.menu-item {
+	    margin-right: 5px;
+	    background: #ffffff08;
+	    padding: 5px;
+   		box-shadow: 2px 2px 2px #000;	
+
+   		&:hover,
+   		&:focus,
+   		&:active {
+   			box-shadow: inset 1px 1px 1px #000;
+   		}
+	}
 /* 
 	Categories
 	----------------------------------------
@@ -595,9 +626,58 @@ h2.test-widget-title {
 
 .test-widget.widget_categories ul {
 	padding-left: 0;
+
+	& li.cat-item {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 13px;
+    line-height: 1.3;
+	}	
+	.stripped-span {
+    right: 20px;
+    position: absolute;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    background-color: #ffffff87;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: #000;
+    color: transparent;
+    text-shadow: rgba(0, 0, 0, 0.52) 1px 1px 1px;
+}
+}
+/* 
+	Text 
+	----------------------------------------
+*/
+.test-widget.widget_text {
+
+	p {
+	    font-size: 12px;
+	    text-align: left;
+	    padding: 0 20px;
+	    color: #ffffffb8;
+	    letter-spacing: 1px;
+	}
+
 }
 
+.test-widget.widget_tag_cloud {
+	text-align: center; 
 
+	.tagcloud {
+    padding: 0 50px;
 
+		a {
+	    background-color: #0000007a;
+	    padding: 6px;
+	    border-radius: 10px;
+	    margin: 0px;
+	    line-height: 2;
+		}
+	}
+}
+ 
 
 

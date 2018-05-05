@@ -86,10 +86,10 @@ function test_custom_settings() {
 	register_setting( 'stripped-theme-layout', 'full_post_width' );
 
 
-	add_settings_section( 'stripped-layout-options', 'Layout Options', 'stripped_layout_potions', 'stripped_theme_layout_options' );
+	add_settings_section( 'stripped-layout-options', 'Layout Options', 'stripped_layout_potions', 'stripped_theme_layout' );
 
-	add_settings_field( 'change-roboto-font', 'Change Font Family', 'change_to_roboto_font', 'stripped_theme_layout_options', 'stripped-layout-options' );
-	add_settings_field( 'custom-fullpostwidth', 'Custom Post Width 100%', 'test_custom_full_post_width', 'stripped_theme_layout_options', 'stripped-layout-options' );	
+	add_settings_field( 'change-roboto-font', 'Change Font Family', 'change_to_roboto_font', 'stripped_theme_layout', 'stripped-layout-options' );
+	add_settings_field( 'custom-fullpostwidth', 'Custom Post Width 100%', 'test_custom_full_post_width', 'stripped_theme_layout', 'stripped-layout-options' );	
 
 
 /*
@@ -258,15 +258,19 @@ function test_theme_create_page() {
 	//Let us pull the information only ones
 	require_once( get_template_directory() . '/inc/templates/test-admin.php' );
 }
+
 function test_theme_support_page() {
 	require_once( get_template_directory() . '/inc/templates/test-theme-support.php');
 }
+
+function stripped_theme_layout_page() {
+	require_once( get_template_directory() . '/inc/templates/stripped-layout-options.php');
+}
+
 //CSS PAGE
 function test_theme_setting_page() {
 	//Generation of our admin page
 	require_once( get_template_directory() . '/inc/templates/test-custom-css.php');
 }
 
-function stripped_theme_layout_page() {
-	require_once( get_template_directory() . '/inc/templates/stripped-layout-options.php');
-}
+
