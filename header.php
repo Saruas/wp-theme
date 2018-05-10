@@ -13,25 +13,32 @@
 			<meta charset="<?php bloginfo( 'charset' ); ?>">
 			<meta name="viewport" content="width=device-width, initial-scale=1"> 
 			<link rel="profile" href="http://gmpg.org/xfn/11">
+			<link rel='https://api.w.org/' href='http://localhost:8888/wp-json/' />
 			<?php wp_head(); ?>
 	</head>
 <body <?php body_class();?> >
 
 
-<div class="test-sidebar">
-	<div class="test-sidebar-container">
-			<a class="js-toggleSidebar sidebar-close"> 
-			<span class="fa fa-times fa-lg"></span>
-			</a>
-			
+	<div class="test-sidebar">
+		<div class="test-sidebar-container">
 
-		<div class="sidebar-scroll">
+				<a class="js-toggleSidebar sidebar-close"> 
+				 <div id="nav-icon3">
+					  <span></span>
+					  <span></span>
+					  <span></span>
+					  <span></span>
+				</div>
 
-			<?php get_sidebar(); ?>
+				</a>
+				
+
+			<div class="sidebar-scroll">
+
+				<?php get_sidebar(); ?>
+			</div>
 		</div>
-	</div>
-</div> 
-
+	</div> 
 
 <div class="header-content">
 	<a class="js-toggleSidebar sidebar-open"> 
@@ -42,6 +49,7 @@
 		<div class="brand">
 		      <a href="http://localhost:8888/">Logo</a>
 		    </div>
+
 	 <div class="nav-first-row"> 
 
 			<nav class="firstnav navbar-defult navbar-first">

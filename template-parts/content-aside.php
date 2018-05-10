@@ -1,15 +1,14 @@
 <?php
 
 /*
-STANDARD POST
+ASIDE POST
 -------------------
 
 */
 ?>
 <div class="around-article-post">
 <article id="post-<?php the_ID(); ?>"<?php post_class(); ?>>
-	<div class="article-post-default">
-	<a href="<?php the_permalink(); ?>">
+	<div class="article-post-aside">
 	
 	<?php 
 	if( has_post_thumbnail() ):
@@ -28,17 +27,22 @@ STANDARD POST
 				<?php the_excerpt(); ?>
 			</div>
 			<div class="entry-content">
-				<footer class="entry-footer">
-				<?php echo theme_posted_footer(); ?>
-		 		</footer>
+
+		 
 			
+		
+		
+
 	<div class="button-container">
 	<a href="<?php the_permalink(); ?>" class="btn tbn-default"><?php _e(' » '); ?></a>
 
 	</div>
 	</div>
+	<footer class="entry-footer">
+		<?php echo theme_posted_footer(); ?>
+
+	</footer>
 	</div>
-	</a>
 	</div>
 		</header>
 	<?php endif; ?>

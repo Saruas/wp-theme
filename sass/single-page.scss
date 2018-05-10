@@ -8,13 +8,18 @@
 	margin-left: 60px;
 }
 
-.single-page-container{
-	width: 95%;
+.single-page-container {
+	width: 80%;
 	margin: auto;
 
 	article {
 		min-height: 800px;
 	}
+
+}
+
+.test-single-page {
+	padding: 30px;
 }
 
 .navigation,
@@ -63,6 +68,7 @@
 
 	&.entry-keywords {
 		padding-top: 50px;
+		padding-left: 20px;
 
 		a {
 	    padding-left: 7px;
@@ -93,7 +99,7 @@
     .stripped-nav-prev-title {
 	    display: block;
 	    position: absolute;
-	    margin-top: -529px;
+	    margin-top: 9px;
 	    background-color: #1d1d1d;
 	    height: 105px;
 	    width: 350px;
@@ -109,7 +115,7 @@
     .stripped-nav-next-title {
 	    display: block;
 	    position: absolute;
-	    margin-top: -210px;
+	    margin-top: 0px;
 	    background-color: #1d1d1d;
 	    height: 105px;
 	    width: 350px;
@@ -127,10 +133,6 @@
 		width: 350px;
 		height: auto;
 		z-index: 3; 
-
-		&:after {
-			background-color: #000;
-		}
 	}
 
     & span {

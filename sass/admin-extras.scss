@@ -5,12 +5,23 @@
 
 /* TYPOGRAPHY */
 
-.roboto-font{
+.roboto-font {
 	& h1, h2, h3, h4, h5, h6, a, p {
 	font-family: 'roboto', sans-serif;
 	}
 }
+.open-sans-font {
+	& h1, h2, h3, h4, h5, h6, a, p {
+	font-family: 'Open Sans', sans-serif;
+	}
+}
 
+.playfair-font {
+	& h1, h2, h3, h4, h5, h6, a, p {
+	font-family: 'Playfair Display', serif;
+	}
+
+}
 /* POST FORMAT */ 
 
 .around-article-post-fullwidth {
@@ -22,5 +33,20 @@
 		display: block;
 		margin: 1%;
 		float: none;
+	}
+}
+
+.around-article-post-thirdwidth {
+	.around-article-post {
+		overflow: hidden;
+		max-height: 600px;
+		min-height: auto;
+		width: 31%;
+		display: block;
+		margin: 1%;
+
+		&.article-post-image .inner-article-post {
+			max-width: 60%;
+		}
 	}
 }

@@ -38,17 +38,35 @@ if( @$background == 1){
 	add_theme_support('custom-background');
 }
 
+
+/*
+	***************************
+		CUSTOM FONT FAMILY OPTIONS
+	***************************	
+*/	
 $customfont = get_option( 'change_roboto_font' );
 if( @$customfont == 1){
 	add_filter( 'body_class', function( $classes ) {
     return array_merge( $classes, array( 'roboto-font' ) );
 } );
 }
-/*
-	***************************
-		CUSTOM FONT FAMILY OPTIONS
-	***************************	
-*/	
+
+$opensansfont = get_option( 'change_open_sans_font' );
+if( @$opensansfont == 1){
+	add_filter( 'body_class', function( $classes ) {
+    return array_merge( $classes, array( 'open-sans-font' ) );
+} );
+}
+
+$playfairfont = get_option( 'change_playfair_font' );
+if( @$playfairfont == 1){
+	add_filter( 'body_class', function( $classes ) {
+    return array_merge( $classes, array( 'playfair-font' ) );
+} );
+}
+
+
+
 
 $custompostwidth = get_option( 'full_post_width' );
 if( @$custompostwidth == 1){
@@ -57,10 +75,17 @@ if( @$custompostwidth == 1){
 } );
 }
 
+$custompostthirdwidth = get_option( 'third_post_width' );
+if( @$custompostthirdwidth == 1){
+	add_filter( 'body_class', function( $classes ) {
+    return array_merge( $classes, array( 'around-article-post-thirdwidth' ) );
+} );
+}
 
 add_theme_support( 'post-thumbnails' );
 
 add_theme_support( 'customize-selective-refresh-widgets' );
+
 
 /* Activate Nav Menu Options */
 
@@ -69,6 +94,14 @@ function test_regrister_nav_menu() {
 	register_nav_menu( 'Second_menu', 'Second Navigation Menu');
 }
 add_action( 'after_setup_theme', 'test_regrister_nav_menu' );
+
+/**
+ * Enables the Excerpt meta box in Page edit screen.
+ */
+function wpcodex_add_excerpt_support_for_pages() {
+	add_post_type_support( 'page', 'excerpt' );
+}
+add_action( 'init', 'wpcodex_add_excerpt_support_for_pages' );
 
 /*
 	***************************
@@ -98,6 +131,8 @@ function cat_count_span($links) {
   $links = str_replace(')', ')</span>', $links);
   return $links;
 }
+
+
 /*
 	***************************
 		BLOG LOOP FUNCTIONS
@@ -145,4 +180,3 @@ function stripped_post_navigation(){
 	}
 	
 }
-

@@ -7,7 +7,7 @@
 		<?php
 
 			if( have_posts() ):
-			?>	<header class="archive-header text-center"> <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+			?>	<header class="archive-header text-center">
 				</header>
 		<?php
 			while( have_posts() ): the_post();

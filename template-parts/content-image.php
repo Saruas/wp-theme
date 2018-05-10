@@ -8,7 +8,7 @@ IMAGE POST FORMAT
 ?>
 <div class="around-article-post">
 <article id="post-<?php the_ID(); ?>"<?php post_class( 'theme-format-image' ); ?>>
-	<div class="article-post">
+	<div class="article-post-image">
 	<header class="entry-header">
 
 		<div class="entry-meta">
@@ -27,11 +27,9 @@ IMAGE POST FORMAT
 			</div>
 		</a>	
 		<?php endif; ?>
-		<div class="entry-excerpt">
-		<?php the_excerpt(); ?>
-		</div>
+		
 
-	<div class="button-container">
+	<div class="button-container-readmore">
 	<a href="<?php the_permalink(); ?>" class="btn tbn-default"><?php _e(' Read More '); ?></a>
 
 	</div>

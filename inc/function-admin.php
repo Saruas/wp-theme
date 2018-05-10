@@ -7,6 +7,7 @@
 
 function testtheme_add_admin_page() {
 
+
 	//Generate Test Admin Page
 	add_menu_page( 'Test Theme Options', 'Test', 'manage_options', 'sundstedts_test', 'test_theme_create_page', 'dashicons-admin-customizer', 110 );
 	/*icon för att lägga in egen get_template_directory() . '/img/namn-icon.png'*/
@@ -22,7 +23,11 @@ function testtheme_add_admin_page() {
 	add_action( 'admin_init', 'test_custom_settings' );
 
 }
-add_action(  'admin_menu', 'testtheme_add_admin_page' );
+	add_action(  'admin_menu', 'testtheme_add_admin_page' );
+	
+
+
+
 
 function test_custom_settings() {
 
@@ -83,14 +88,21 @@ function test_custom_settings() {
 */
 
 	register_setting( 'stripped-theme-layout', 'change_roboto_font' );
+	register_setting( 'stripped-theme-layout', 'change_open_sans_font' );
+	register_setting( 'stripped-theme-layout', 'change_playfair_font' );
+
 	register_setting( 'stripped-theme-layout', 'full_post_width' );
+	register_setting( 'stripped-theme-layout', 'third_post_width' );
 
 
 	add_settings_section( 'stripped-layout-options', 'Layout Options', 'stripped_layout_potions', 'stripped_theme_layout' );
 
 	add_settings_field( 'change-roboto-font', 'Change Font Family', 'change_to_roboto_font', 'stripped_theme_layout', 'stripped-layout-options' );
-	add_settings_field( 'custom-fullpostwidth', 'Custom Post Width 100%', 'test_custom_full_post_width', 'stripped_theme_layout', 'stripped-layout-options' );	
+	add_settings_field( 'change-open-sans-font', 'Change Font Family', 'change_to_open_sans_font', 'stripped_theme_layout', 'stripped-layout-options' );
+	add_settings_field( 'change-playfair-font', 'Change Font Family', 'change_to_playfair_font', 'stripped_theme_layout', 'stripped-layout-options' );
 
+	add_settings_field( 'custom-fullpostwidth', 'Custom Post Full Width', 'test_custom_full_post_width', 'stripped_theme_layout', 'stripped-layout-options' );	
+	add_settings_field( 'custom-thirdpostwidth', 'Custom Post Width In Three Columns', 'test_custom_third_post_width', 'stripped_theme_layout', 'stripped-layout-options' );
 
 /*
 	***************************
@@ -111,7 +123,7 @@ function test_custom_settings() {
 	***************************
 		Sidebar Options Side
 	***************************	
-*/
+*/ 
 
 //General Settings Site
 function test_theme_options() {
@@ -224,12 +236,29 @@ function change_to_roboto_font() {
 	echo '<label><input type="checkbox" id="change_roboto_font" name="change_roboto_font" value="1" '.$checked.' /> <span class="font-roboto">To Roboto</span></label>';
 }
 
+function change_to_open_sans_font() { 
+	$options = get_option( 'change_open_sans_font' );
+	$checked = ( @$options[$format] == 1? 'checked' : '' );
+	echo '<label><input type="checkbox" id="change_open_sans_font" name="change_open_sans_font" value="1" '.$checked.' /> <span class="font-open-sans">To Open Sans</span></label>';
+}
+
+function change_to_playfair_font() { 
+	$options = get_option( 'change_playfair_font' );
+	$checked = ( @$options[$format] == 1? 'checked' : '' );
+	echo '<label><input type="checkbox" id="change_playfair_font" name="change_playfair_font" value="1" '.$checked.' /> <span class="font-playfair">To Payfair</span></label>';
+}
+
 function test_custom_full_post_width() { 
 	$options = get_option( 'full_post_width' );
 	$checked = ( @$options[$format] == 1? 'checked' : '' );
 	echo '<label><input type="checkbox" id="full_post_width" name="full_post_width" value="1" '.$checked.' /> Activate the Full Post Width</label>';
 }
 
+function test_custom_third_post_width() { 
+	$options = get_option( 'third_post_width' );
+	$checked = ( @$options[$format] == 1? 'checked' : '' );
+	echo '<label><input type="checkbox" id="third_post_width" name="third_post_width" value="1" '.$checked.' /> Activate the Post Width To Three Comumns</label>';
+}
 /*
 	***************************
 		 Custom CSS Options
