@@ -4,21 +4,15 @@
 		<main id="main" class="site-main" role="main"></main>
 
 			<div class="full-container">
-			<div class="page-container-sidebar">
-				<div class="test-header-background background-image" style="background-image: url(<?php header_image() ?>);">
-						<div class="header-content table">
-							<div class="table-cell">	
-							<h1 class="site-title"><?php bloginfo( 'name' )?></h1>
-							<h2 class="site-discription"><?php bloginfo( 'description' )?></h2>
-						</div>
-						</div>
-				</div> 
+				<div class="page-container-sidebar"> 
 
-				 <h2 class="portfolio-header">My Portfolio</h2> 
-				 <ol class="posts"></ol>
-				 	<div class="load-more">
-				        <a class="load-more__button"   href="#">Load My Awesome Projects</a>
-				    </div>
+					<div id="portfolio-posts-container"></div>
+					<button id="portfolio-posts-btn"> click</button>
+					
+					 <input type="text" class="admin-quick-add" name="title" placeholder="Title">
+					 <textarea class="admin-qouck-add" name="content" placeholder="Content"> </textarea>
+					 <button id="quick-add-button">Creat post</button>
+
 
 				<?php
 
@@ -32,9 +26,14 @@
 
 					endif;
 				?>
-				
+
 			</div>	
 	</div> 
+</div>
+<!-- Return to Top -->
+<a href="javascript:" id="return-to-top"><span class="pinit-up-button"></span></a>
+
+
 
 <?php get_footer(); ?>
 

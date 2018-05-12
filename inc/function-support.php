@@ -157,26 +157,40 @@ function stripped_post_navigation(){
 	$prevPost = get_previous_post(true);
 
 	if($prevPost){ ?>
-		<div class="stripped_post_navigation previous">
-	<?php $prevthumbnail = get_the_post_thumbnail($prevPost->ID, array(300,150) ); 
-	 previous_post_link( '<div class="nav-prev">%link</div>', $prevthumbnail . _x('<div class="stripped-nav-prev-title"><a class="stripped-prev-a">Privious</a><span class="meta-nav">&larr;</span><span class="stripped-prev-title"> %title </span></div>', 'Previous post link', 'nicosite' ) );
+	<?php  
+	 previous_post_link( '<div class="nav-prev">%link</div>', '<span class="meta-nav"></span>', 'Previous post link' );
 	}
 	
 	else {
-		echo 'no Privious Posts';
+		echo '';
 	}
-	?></div><?php
 
 	$nextPost = get_next_post(true);
 
 	if($nextPost){ ?>
-		<div class="stripped_post_navigation next">
-	<?php $nextthumbnail = get_the_post_thumbnail($nextPost->ID, array(300,150) ); 
-	 next_post_link( '<div class="nav-next">%link</div>', $nextthumbnail . _x('<div class="stripped-nav-next-title"><a class="stripped-next-a">Next</a><span class="stripped-prev-title"> %title </span><span class="meta-nav">&rarr;</span></div>', 'Previous post link', 'nicosite' ) );
+	<?php 
+	 next_post_link( '<div class="nav-next">%link</div>', '<span class="meta-nav"> </span></div>', 'Previous post link' );
 	}
 
 	else {
-		echo 'no more posts';
+		echo '';
 	}
 	
 }
+
+
+function pinit_get_attachment(){
+	$attachments = get_posts( array(
+		'post_type' => 'attachment',
+		'numberposts' => 1,
+		'post_parent' => get_the_ID()
+	) );
+	if( $attachments ):
+		foreach ($attachments as $attachment ): 
+			$output = wp_get_attachment_url( $attachment -> ID );
+		endforeach;
+	endif;
+	return $output;
+}
+
+

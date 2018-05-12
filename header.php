@@ -21,16 +21,7 @@
 
 	<div class="test-sidebar">
 		<div class="test-sidebar-container">
-
-				<a class="js-toggleSidebar sidebar-close"> 
-				 <div id="nav-icon3">
-					  <span></span>
-					  <span></span>
-					  <span></span>
-					  <span></span>
-				</div>
-
-				</a>
+				
 				
 
 			<div class="sidebar-scroll">
@@ -41,15 +32,19 @@
 	</div> 
 
 <div class="header-content">
-	<a class="js-toggleSidebar sidebar-open"> 
-			<span class="fa fa-bars fa-lg"></span>
-	</a>
+	
 
 	<div class="nav-first-container">
-		<div class="brand">
+			<div class="brand">
 		      <a href="http://localhost:8888/">Logo</a>
 		    </div>
 
+		    	<div id="nav-icon3" class="open"> 
+					  <span></span>
+					  <span></span>
+					  <span></span>
+					  <span></span>
+				</div>
 	 <div class="nav-first-row"> 
 
 			<nav class="firstnav navbar-defult navbar-first">

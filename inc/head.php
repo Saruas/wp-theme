@@ -33,5 +33,13 @@ function su_head(){
 			color: <?php echo get_theme_mod( 'socialMedia_color', '#000' ); ?> !important;
 		}
 	</style>	
+
+	<style type="text/css">
+		 .button-container-readmore, .split, .nav-prev, .nav-next {
+			background-color: <?php echo get_theme_mod( 'post_acent_color', '#ff007f' ); ?> !important;
+		}
+	</style>	
 	<?php	
+
+	
 }

@@ -63,6 +63,10 @@ function test_load_scripts(){
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'testjs', get_template_directory_uri() . '/js/test.js', array('jquery'), '1.0.0' );
 
+
+	wp_localize_script( 'testjs', 'magicalData', array(
+		'nonce' => wp_create_nonce('wp_rest')
+		));
 }
 add_action( 'wp_enqueue_scripts', 'test_load_scripts' );
 

@@ -1,6 +1,21 @@
 //Load jQuery
 jQuery(document).ready(function($){
 
+// ===== Scroll to Top ==== 
+$(window).scroll(function() {
+    if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+        $('#return-to-top').fadeIn(200);    // Fade in the arrow
+    } else {
+        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+    }
+});
+
+$('#return-to-top').click(function() {      // When arrow is clicked
+    $('body,html').animate({
+        scrollTop : 0                       // Scroll to top of body
+    }, 500);
+});
+
 // var portfolioPostsBtn = document.getElementById( 'portfolio-post-btn' );
 // var portfolioPostLoad = document.getElementById( 'portfolio-post-load' );
 
@@ -47,19 +62,22 @@ $(document).on('click', '.js-toggleSidebar', function() {
 $(document).on('click', '.js-openSidebar', function() {
 	$( '.test-sidebar' ).removeClass( 'sidebar-closed');
 }); //close sidebar
-*/
 
-// MENU
 
 $(document).on('click', '.js-toggleSidebar', function() {
-	$( '.test-sidebar' ).toggleClass( 'sidebar-closed' );
-	$( '.page-container-sidebar' ).toggleClass( 'page-container');
+  $( '.test-sidebar' ).toggleClass( 'sidebar-closed' );
+  $( '.page-container-sidebar' ).toggleClass( 'page-container' );
+  $( '#nav-icon3' ).toggleClass( 'open' );
 }); //
+*/
 
+// HAMBURGER MENU
 
 $(document).ready(function(){
   $('#nav-icon3').click(function(){
     $(this).toggleClass('open');
+    $( '.test-sidebar' ).toggleClass( 'sidebar-closed' );
+    $( '.page-container-sidebar' ).toggleClass( 'page-container' );
   });
 });
 /* First page functions 
@@ -98,7 +116,7 @@ jQuery( function( $ ) {
 
       // ajax call
             $.ajax( {
-              url: 'http://localhost:8888/wp-json/wp/v2/posts?per_page=2&page=' + fetchpage,
+              url: 'http://localhost:8888/wp-json/wp/v2/posts?_filter[tag]=appcontent' + fetchpage,
               success: function ( data, textStatus, request ) {
   
           // log all the things 
@@ -119,7 +137,8 @@ jQuery( function( $ ) {
               var link = item.link;
               var excerpt = item.excerpt.rendered;
 
-              $(".posts").append('<li class="post"><a href="' + link + '" target="_blank">' + title + '</a>'+ excerpt +'</li>');
+
+              $(".posts").append('<div class="category-grid"><div class="post"><a href="' + link + '" target="_blank">' + title + '</a>'+ excerpt +'</div>');
                     });
 
           // increment fetchpage
@@ -146,6 +165,14 @@ jQuery( function( $ ) {
   } );
   
 } );
+
+
+
+
+
+
+
+
 
 
 
